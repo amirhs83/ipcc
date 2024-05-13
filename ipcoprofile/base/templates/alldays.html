@@ -1,0 +1,49 @@
+
+{% extends 'base.html'%}
+{% block content%}
+
+
+
+
+
+
+<table style="width:100%">
+    <tr>
+        <th>part</th>
+        <th>days</th>
+       
+    </tr>
+    {%for index,day in dddd.items%}
+    <tr>
+        <td>{{index}}</td>
+        <td>{{day}}</td>
+        
+    </tr>
+    {%endfor%}
+ 
+</table>
+
+
+
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            
+        }
+        table{
+            color: whitesmoke;
+        }
+    </style>
+    
+ 
+
+{% endblock %}
+
+
+
+
+
+
+

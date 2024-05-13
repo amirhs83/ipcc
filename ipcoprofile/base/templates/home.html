@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+home page <h1>{{ ssl }}</h1>
+<hr style="width: 1%; color: grey;">
+
+<a href="{% url "base:logout" %}">logout</a>
+    <hr style="width: 1%; color: grey;">
+    <a href="{% url "base:showbar2" %}">    showbar_2</a>
+    <hr style="width: 1%; color: grey;">
+    <a href="{% url "base:showbar" %}">   show bar</a>
+    <hr style="width: 1%; color: grey;">
+    <a href="{% url "base:show" %}">   tolidrozaneh</a>
+    <hr style="width: 1%; color: grey;">
+    <a href="{% url "base:alldays" %}">dyas negativ</a>
+    <hr style="width: 1%; color: grey;">
+    <a href="{% url "base:adddate" %}">add days off</a>
+    <hr style="width: 1%; color: grey;">
+
+
+<style>
+    .aa{
+        width: 4%;
+        height: 3%;
+        border: none;
+        border-bottom: 1px;
+        background-color: aqua;
+        color: black;
+        font-family: 'Mulish', sans-serif;
+        display: flex;
+        border-radius: 5px;
+        text-decoration: none;
+
+
+
+    }
+    .aa:hover{
+        background-color: aquamarine;
+        width: 5%;
+        height: 5%;
+    }
+</style>
+{% endblock content %}
+
+

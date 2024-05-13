@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+     <form method="post", name="candelerform">
+         {% csrf_token %}
+        {{ form }}
+
+        <button type="submit"></button>
+
+    </form>
+    <h1>{{ df }}</h1>
+</body>
+</html>

@@ -1,0 +1,57 @@
+{% extends 'base.html'%}
+{% block content%}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <form method="post" class="form">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">تایید</button>
+
+    </form>
+    <h1>{{ dd }}</h1>
+</head>
+<body>
+
+</body>
+<style>
+    .form{
+
+        display: flex;
+        margin: 3%;
+
+        margin-top: 4%;
+        background-color: #545D7A;
+        height: 10%;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+
+
+
+
+    }
+    .form input{
+        height: 30%;
+        border-radius: 10px;
+        border: none;
+
+    }
+    .form button{
+        width: 60px;
+        height: 30%;
+        margin-left: 1%;
+        border-radius: 10px;
+        background-color: #10182F;
+        border: none;
+        color: white;
+
+    }
+    .form label{
+        font-size: 22px;
+
+    }
+</style>
+{% endblock %}
