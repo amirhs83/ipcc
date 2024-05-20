@@ -4,13 +4,16 @@ import pandas as pd
 from datetime import datetime, timedelta
 
 
+def find_index(id_value):
+    dfbook = pd.read_csv('Book1.csv')
+    dfbook = pd.DataFrame(dfbook)
 
-
-
-    # for i in range(0, len(dfbook)-1):
-    # print(eskelet(tolid[i]))
-
-def eskelet(int):
+    if id_value in dfbook['id'].values:
+      return dfbook['id'].values.tolist().index(id_value)
+    else:
+      return None
+def eskelet(id_search,listf):
+    int = find_index(id_search)
     dfbom = pd.read_csv('bom.csv')
     dfbom = pd.DataFrame(dfbom)
 
@@ -51,18 +54,22 @@ def eskelet(int):
     tolid["datetolid"] = pd.DataFrame({'dates': dates_str})
     llist = []
     for i in range(0, len(tolid) - 1):
+        for j in listf:
+            if j == 'g1':
 
-        if tolid.loc[i, 'datetolid'] in dfbook.loc[0, 'g1d']:
-            tolid.loc[i, 'gomrock'] = dfbook.loc[int, 'g1']
+                if tolid.loc[i, 'datetolid'] in dfbook.loc[0, 'g1d']:
+                    tolid.loc[i, 'gomrock'] = dfbook.loc[int, 'g1']
+            if j == 'g2':
+                if tolid.loc[i, 'datetolid'] in dfbook.loc[0, 'g2d']:
+                    tolid.loc[i, 'gomrock'] = dfbook.loc[int, 'g2']
+            if j == 'g3':
 
-        if tolid.loc[i, 'datetolid'] in dfbook.loc[0, 'g2d']:
-            tolid.loc[i, 'gomrock'] = dfbook.loc[int, 'g2']
+                if tolid.loc[i, 'datetolid'] in dfbook.loc[0, 'g3d']:
+                    tolid.loc[i, 'gomrock'] = dfbook.loc[int, 'g3']
+            if j == 'g4':
 
-        if tolid.loc[i, 'datetolid'] in dfbook.loc[0, 'g3d']:
-            tolid.loc[i, 'gomrock'] = dfbook.loc[int, 'g3']
-
-        if tolid.loc[i, 'datetolid'] in dfbook.loc[0, 'g4d']:
-            tolid.loc[i, 'gomrock'] = dfbook.loc[int, 'g4']
+                if tolid.loc[i,'datetolid'] in dfbook.loc[0, 'g4d']:
+                    tolid.loc[i, 'gomrock'] = dfbook.loc[int, 'g4']
 
         if tolid.loc[i, 'result'] <= 0:
             llist.append(tolid.loc[i, 'datetolid'])

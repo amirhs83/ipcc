@@ -1,18 +1,18 @@
 from django.urls import path, include
-from .views import authView, home, Calender,DeleteDate,AddDate,ShowCreate,InputShow,AllDays,Data_2,Data
-
-
+from .views import  home, AddDate, ShowCreate, InputShow, Data_2, DeletDay, Upload, UserRegister,LoginUser,UserLogout
 
 urlpatterns = [
  path("", home, name="home"),
  path('show/',InputShow.as_view(),name="show"),
- path("signup/", authView, name="authView"),
- path("accounts/", include("django.contrib.auth.urls")),
- path("calender/",Calender.as_view(), name="calendar"),
- path("viewdate/",DeleteDate.as_view(),name='deletedate'),
+
+
  path('adddate/',AddDate.as_view(),name='adddate'),
  path('showcreate/',ShowCreate.as_view(),name='showcreate'),
- path('alldays/',AllDays.as_view(),name='alldays'),
- path("showbar/",Data.as_view(),name='showbar'),
  path('showbar2/',Data_2.as_view(),name='showbar2'),
+ path('deleteday/<int:id>/',DeletDay.as_view(),name='deletday'),
+ path('uploadfile/',Upload.as_view(),name='uploadfile'),
+ path('userregister/',UserRegister.as_view(),name='userregister'),
+ path('userlogin/',LoginUser.as_view(),name='loginuser'),
+ path('userlogout/',UserLogout.as_view(),name='userlogout'),
+
 ]
